@@ -1,3 +1,9 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  gap: 16px;
+}
+
 #modal {
   display: none;
   background: white;
@@ -6,4 +12,21 @@
   position: fixed;
   top: 20%;
   left: 20%;
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+.radio-option {
+  padding: 10px 16px;
+  border: 2px solid #444;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.radio-option.selected {
+  background: #0078d4;
+  color: white;
 }

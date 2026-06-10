@@ -4,42 +4,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A11y Fix-It Lab</title>
+  <title>A11y Fix-It</title>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles.css">
   <script type="module" src="scripts/main.js"></script>
 </head>
 
 <body>
-  <main>
-    <h1>A11y Fix-It Lab</h1>
-    <p>Welcome to the A11y Fix-It Lab! This is a place where you can practice fixing accessibility coding issues.</p>
+  <div class="wrapper">
+    <div class="exercises">
+      <h1>A11y Fix-It</h1>
+      <p>Welcome to the A11y Fix-It! This is a place where you can practice fixing accessibility coding issues.</p>
 
-    <a href="#" id="toggle-button">
-      Instructions
-    </a>
-    <div id="content-to-toggle">
-      <p>With each exercise you will be presented with an inaccessible component. Your task is to identify and fix the
-        accessibility issues.</p>
-      <p>Exercises 2 - X are commented out and can be uncommented as you progress.</p>
+      <a href="#" id="toggle-button">
+        Instructions
+      </a>
+      <div id="content-to-toggle">
+        <p>With each exercise you will be presented with an inaccessible component. Your task is to identify and fix the
+          accessibility issues.</p>
+        <p>Exercises 2 - X are commented out and can be uncommented as you progress.</p>
+      </div>
+
+      <h2>Exercise 1</h2>
+      <ul>
+        <li>Apply appropriate ARIA landmarks</li>
+        <li>Make the instruction disclosure accessible.</li>
+      </ul>
+
+      <!-- Exercise 2 -->
+      <h2>Exercise 2</h2>
+      <p>Fix this modal:</p>
+      <button id="open-modal-button">View hints</button>
+
+      <div id="modal">
+
+        <h2>Hints</h2>
+        <p>Here are some hints to help you complete the exercises.</p>
+
+        <button id="close-modal-button">Close</button>
+      </div>
+
+      <h2>Exercise 3</h2>
+      <p>Make this radio group accessible.</p>
+      <div class="radio-group">
+        <div class="radio-option selected"">
+        Option A
+      </div>
+      <div class=" radio-option"">
+          Option B
+        </div>
+        <div class="radio-option"">
+        Option C
+      </div>
     </div>
-
-    <h2>Exercise 1</h2>
-    <p>Make the instruction disclosure accessible.</p>
-    <!-- Exercise 2 -->
-    <h2>Exercise 2</h2>
-    <p>Fix this modal:</p>
-    <button id="open-modal-button">View hints</button>
-
-    <div id="modal">
-
-      <h2>Hints</h2>
-      <p>Here are some hints to help you complete the exercises.</p>
-
-      <button id="close-modal-button">Close</button>
-    </div>
-
-
+    <h2>Exercise 4</h2>
+    <p>Group the exercises above into a tab set.</p>
+</div>
+<div>
+  <p>A list of recommended Deque videos and other resources will be here</p>
+</div>
+</div>
+<div>Copyright &copy; 2026</div>
 
 
 </body>
