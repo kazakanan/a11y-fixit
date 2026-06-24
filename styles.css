@@ -125,6 +125,9 @@ header {
     justify-content: space-between;
     padding: 10px;
     margin-top: 30px;
+    div {
+      align-self:flex-start
+    }
     img{
       width: 144px;
     }
