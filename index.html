@@ -8,22 +8,34 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles.css">
   <script type="module" src="scripts/main.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rozha+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="exercises">
+  <div class="grid-container">
+  <header>
+    <img class="left" src="./images/a11y-summer-camp-logo.svg" alt="A11y summer camp header image">
+    <img class="right" src="./images/header-constellation.svg" alt="A11y summer camp header image">
+  </header>
+  <!-- <div class="wrapper"> -->
+
+    <main class="exercises">
       <h1>A11y Fix-It</h1>
       <p>Welcome to the A11y Fix-It! This is a place where you can practice fixing accessibility coding issues.</p>
 
-      <a href="#" id="toggle-button">
-        Instructions
-      </a>
-      <div id="content-to-toggle">
+      <button id="toggle-button" class="disclosure-btn" type="button" aria-expanded="false" aria-controls="content-to-toggle"> Instructions</button>
+      <div id="content-to-toggle" class="desc">
         <p>With each exercise you will be presented with an inaccessible component. Your task is to identify and fix the
           accessibility issues.</p>
         <p>Exercises 2 - X are commented out and can be uncommented as you progress.</p>
       </div>
+
+
+
 
       <h2>Exercise 1</h2>
       <ul>
@@ -47,25 +59,42 @@
       <h2>Exercise 3</h2>
       <p>Make this radio group accessible.</p>
       <div class="radio-group">
-        <div class="radio-option selected"">
+        <div id="a" class="radio-option selected"">
+          <img src="./images/noodles.png" >
         Option A
-      </div>
-      <div class=" radio-option"">
+        </div>
+        <div id="b" class=" radio-option"">
+           <img src="./images/fries.png" >
           Option B
         </div>
-        <div class="radio-option"">
+        <div id="c" class="radio-option"">
+           <img src="./images/burger.png" >
         Option C
+        </div>
       </div>
-    </div>
     <h2>Exercise 4</h2>
     <p>Group the exercises above into a tab set.</p>
-</div>
-<div>
-  <p>A list of recommended Deque videos and other resources will be here</p>
-</div>
-</div>
-<div>Copyright &copy; 2026</div>
+  </main>
+  <aside id="sidebar">
+    <div>
+      <h3>Resources</h3>
+      <p>Your counselor have curated this list with Coder Bear's help. Take a new trail and explore.</p>
+      <ul>
+        <li>Lorem ipsum a <a href="#">link to a resource</a></li>
+        <li><a href="#">Link to a resource</a></li>
+        <li>Snorum bipsum a link to <a href="#">a special resource</a>.</li>
+      </ul>
+    </div>
+    <figure><img src="./images/coder-bear.svg" ></figure>
 
+  </aside>
+
+<!-- </div> -->
+<footer>
+  <p>Copyright &copy; 2026</p>
+</footer>
+
+</div>
 
 </body>
 
