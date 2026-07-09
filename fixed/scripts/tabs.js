@@ -6,7 +6,6 @@ export function setupTabs() {
 	tabs.forEach((tab, index) => {
 		tab.addEventListener('click', () => {
 			tabs.forEach((t, i) => {
-				console.log('t:', t, 'tab:', tab, 'i:', i);
 				const isSelected = t === tab;
 				t.setAttribute('aria-selected', isSelected);
 				t.classList.toggle('selected', isSelected);
