@@ -3,10 +3,7 @@ export function setupTabs() {
 	const tabs = Array.from(tabList.getElementsByClassName('tab-btn'));
 	const tabPanels = Array.from(document.getElementsByClassName('tab-content'));
 
-	console.log(tabs);
-
 	tabs.forEach((tab, index) => {
-		console.log('tab:', tab, 'index:', index);
 		tab.addEventListener('click', () => {
 			tabs.forEach((t, i) => {
 				console.log('t:', t, 'tab:', tab, 'i:', i);
