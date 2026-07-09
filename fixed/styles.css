@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   &:focus {
-    outline: 2px solid hotpink;
+    outline: 2px solid #4b2e83;
     outline-offset: 2px;
   }
 }
@@ -137,7 +137,7 @@ header {
 
       .tab-btn {
         background: transparent;
-        border: 1px solid #2ad2c9;
+        border: 1px solid #010101;
         border-radius: 4px;
         font-size: 17px;
         font-weight: 700;
@@ -146,7 +146,7 @@ header {
         padding: 0.5em 1em;
 
         &[aria-selected="true"], &:hover, &:focus {
-          background-color: #2ad2c9;
+          background-color: #e93cac;
           color: black;
         }
       }
