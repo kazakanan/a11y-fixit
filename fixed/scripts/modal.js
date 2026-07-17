@@ -20,17 +20,27 @@ export function setupModal(modal, openButton, closeButton) {
   });
 
   modalElement.addEventListener('keydown', (event) => {
-    if (event.key !== 'Escape' && event.key !== 'Tab') return;
     if (event.key === 'Escape') {
       modalElement.style.display = "none";
       modalElement.setAttribute("aria-hidden", "true");
       body.classList.remove('modal-open'); // bonus
       openBtn.focus();
     }
-   // bonus: trap focus inside modal
+
     if (event.key === 'Tab') {
-      event.preventDefault();
-      closeBtn.focus();
+      const focusableElements = modalElement.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      const firstFocusable = focusableElements[0];
+      const lastFocusable = focusableElements[focusableElements.length - 1];
+
+      if (focusableElements.length === 0) {
+        event.preventDefault();
+      } else if (event.shiftKey && document.activeElement === firstFocusable) {
+        event.preventDefault();
+        lastFocusable.focus();
+      } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+        event.preventDefault();
+        firstFocusable.focus();
+      }
     }
   });
 }

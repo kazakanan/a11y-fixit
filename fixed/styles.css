@@ -23,6 +23,16 @@ body.modal-open {
     z-index: 999;
   }
 }
+body.modal-open .modal-body {
+  position: relative;
+
+  #close-modal-button {
+    position: absolute;
+    top: -20px;
+    right: 0;
+  }
+}
+
 h1, h2, h3, p, li, button {
   color: #3D3D3D;
 }
@@ -124,12 +134,16 @@ h2 {
           display: flex;
           gap: 10px;
           padding: 0 25px;
+          position: relative;
       }
-      .radio-option.selected {
+      .radio-option:hover,
+      .radio-option:focus,
+      .radio-option:focus-within,
+      .radio-option.selected,
+      .radio-option.is-active {
         background: black;
         border-color: black;
         color: #2ad2c9;
-        /* color: white; */
       }
     }
 

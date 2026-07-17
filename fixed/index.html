@@ -7,6 +7,12 @@
   <title>A11y Fix-It Fixed!</title>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="preload" as="image" href="../images/noodles-black.png">
+  <link rel="preload" as="image" href="../images/noodles-white.png">
+  <link rel="preload" as="image" href="../images/fries.png">
+  <link rel="preload" as="image" href="../images/fries-white.png">
+  <link rel="preload" as="image" href="../images/burger.png">
+  <link rel="preload" as="image" href="../images/burger-white.png">
   <script type="module" src="./scripts/main.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,10 +58,12 @@
         <button id="open-modal-button">View hints</button>
 
         <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-heading" aria-hidden="true">
-          <h2 id="modal-heading">Hints</h2>
-          <p>Here are some hints to help you complete the exercises.</p>
-
-          <button id="close-modal-button">Close</button>
+          <div class="modal-body">
+            <button id="close-modal-button">Close</button>
+            <h2 id="modal-heading">Hints</h2>
+            <p>Here are some <a href="#">hints</a> to help you complete the <a href="#">exercises</a>.</p>
+            <button id="another-button">Another Button</button>
+          </div>
         </div>
       </div>
 
