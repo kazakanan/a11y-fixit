@@ -6,7 +6,7 @@
   }
 }
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -32,9 +32,20 @@ body.modal-open .modal-body {
     right: 0;
   }
 }
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0 0 1em 0;
+}
 
-h1, h2, h3, p, li, button {
-  color: #3D3D3D;
+h1,
+h2,
+h3,
+p,
+li,
+button {
+  color: #3d3d3d;
 }
 h1 {
   font-size: 37px;
@@ -44,8 +55,8 @@ h2 {
   margin-bottom: 0;
 }
 .grid-container {
- display: flex;
- flex-direction: column;
+  display: flex;
+  flex-direction: column;
   header {
     --logo-padding-inline: 0.75em;
     display: grid;
@@ -55,7 +66,7 @@ h2 {
     .left {
       justify-self: start;
       padding-inline: var(--logo-padding-inline);
-      max-height: 83px;;
+      max-height: 83px;
     }
     .right {
       justify-self: end;
@@ -71,7 +82,7 @@ h2 {
     display: flex;
     flex-direction: column;
 
-    #content-to-toggle{
+    #content-to-toggle {
       display: none;
       border: 1px solid #010101;
       border-top: 0 none;
@@ -119,6 +130,7 @@ h2 {
       top: 20%;
       left: 20%;
       z-index: 9999;
+      max-width: 50%;
     }
 
     .radio-group {
@@ -126,15 +138,15 @@ h2 {
       flex-wrap: wrap;
       gap: 10px;
       .radio-option {
-          align-items: center;
-          border: 4px solid #3d3d3d;
-          border-radius: 18px;
-          color: #2ad2c9;
-          cursor: pointer;
-          display: flex;
-          gap: 10px;
-          padding: 0 25px;
-          position: relative;
+        align-items: center;
+        border: 4px solid #3d3d3d;
+        border-radius: 18px;
+        color: #2ad2c9;
+        cursor: pointer;
+        display: flex;
+        gap: 10px;
+        padding: 0 25px;
+        position: relative;
       }
       .radio-option:hover,
       .radio-option:focus,
@@ -160,7 +172,9 @@ h2 {
         margin-right: 10px;
         padding: 0.5em 1em;
 
-        &[aria-selected="true"], &:hover, &:focus {
+        &[aria-selected="true"],
+        &:hover,
+        &:focus {
           background-color: #e93cac;
           color: black;
         }
@@ -174,7 +188,7 @@ h2 {
     grid-area: main;
     padding-inline: 2em;
   }
-  #sidebar{
+  #sidebar {
     grid-area: sidebar;
     align-items: flex-end;
     background-color: #f4f4f4;
@@ -185,9 +199,9 @@ h2 {
     padding: 10px;
     margin-top: 30px;
     div {
-      align-self:flex-start
+      align-self: flex-start;
     }
-    img{
+    img {
       width: 144px;
     }
   }
@@ -204,29 +218,28 @@ footer {
   align-content: end;
   flex-wrap: wrap;
   margin-top: 40px;
-  p{
-    color: white
+  p {
+    color: white;
   }
   @media (min-width: 1920px) {
     background-size: auto;
   }
 }
 
-@media (min-width:992px) {
-    .grid-container {
-      header {
-        --logo-padding-inline: 1.3em;
-      }
-        .wrapper {
-          --wrapper-padding: 5em;
-          display: grid;
-           grid-template-areas:
-            'main  sidebar';
-          grid-template-columns: minmax(auto, 960px) 300px;
-          margin: 0 100px;
-          aside {
-            margin-right: 2em;
-          }
-        }
+@media (min-width: 992px) {
+  .grid-container {
+    header {
+      --logo-padding-inline: 1.3em;
     }
+    .wrapper {
+      --wrapper-padding: 5em;
+      display: grid;
+      grid-template-areas: "main  sidebar";
+      grid-template-columns: minmax(auto, 960px) 300px;
+      margin: 0 100px;
+      aside {
+        margin-right: 2em;
+      }
+    }
+  }
 }
