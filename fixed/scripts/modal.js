@@ -3,28 +3,42 @@ export function setupModal(modal, openButton, closeButton) {
   const openBtn = document.getElementById(openButton);
   const closeBtn = document.getElementById(closeButton);
   const body = document.querySelector("body");
+  let returnFocusElement = openBtn;
 
   if (!modalElement || !openBtn || !closeBtn) return;
-  openBtn.addEventListener("click", () => {
-    body.classList.add("modal-open"); // bonus
-    modalElement.style.display = "block";
+
+  const openModal = (invoker) => {
+    returnFocusElement = invoker;
+    body.classList.add("modal-open");
+    modalElement.hidden = false;
     modalElement.setAttribute("aria-hidden", "false");
+    // Intentionally focus Close first in this exercise so keyboard users can
+    // dismiss immediately; we are deliberately not changing this behavior.
     closeBtn.focus();
+  };
+
+  const closeModal = () => {
+    modalElement.hidden = true;
+    modalElement.setAttribute("aria-hidden", "true");
+    body.classList.remove("modal-open");
+    returnFocusElement.focus();
+  };
+
+  openBtn.addEventListener("click", () => {
+    const invoker =
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : openBtn;
+    openModal(invoker);
   });
 
   closeBtn.addEventListener("click", () => {
-    modalElement.style.display = "none";
-    modalElement.setAttribute("aria-hidden", "true");
-    body.classList.remove("modal-open"); // bonus
-    openBtn.focus();
+    closeModal();
   });
 
   modalElement.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      modalElement.style.display = "none";
-      modalElement.setAttribute("aria-hidden", "true");
-      body.classList.remove("modal-open"); // bonus
-      openBtn.focus();
+      closeModal();
     }
 
     if (event.key === "Tab") {

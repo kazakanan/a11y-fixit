@@ -122,7 +122,7 @@ h2 {
     }
 
     #modal {
-      display: none;
+      display: block;
       background: white;
       border: 2px solid #333;
       padding: 20px;
@@ -131,6 +131,10 @@ h2 {
       left: 20%;
       z-index: 9999;
       max-width: 50%;
+    }
+
+    #modal[hidden] {
+      display: none;
     }
 
     .radio-group {
