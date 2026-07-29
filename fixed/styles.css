@@ -155,11 +155,35 @@ h2 {
       .radio-option:hover,
       .radio-option:focus,
       .radio-option:focus-within,
-      .radio-option.selected,
-      .radio-option.is-active {
+      .radio-option[aria-checked="true"] {
         background: black;
         border-color: black;
         color: #fff;
+      }
+
+      .radio-option[aria-checked="false"] {
+        background: transparent;
+      }
+
+      @media (forced-colors: active) {
+        .radio-option {
+          forced-color-adjust: auto;
+          background: Canvas;
+          border-color: CanvasText;
+          color: CanvasText;
+        }
+
+        .radio-option:focus,
+        .radio-option:focus-visible {
+          outline: 2px solid Highlight;
+          outline-offset: 2px;
+        }
+
+        .radio-option[aria-checked="true"] {
+          background: Highlight;
+          border-color: Highlight;
+          color: HighlightText;
+        }
       }
     }
 
