@@ -141,7 +141,7 @@ h2 {
         align-items: center;
         border: 4px solid #3d3d3d;
         border-radius: 18px;
-        color: #2ad2c9;
+        color: #000;
         cursor: pointer;
         display: flex;
         gap: 10px;
@@ -155,7 +155,7 @@ h2 {
       .radio-option.is-active {
         background: black;
         border-color: black;
-        color: #2ad2c9;
+        color: #fff;
       }
     }
 
