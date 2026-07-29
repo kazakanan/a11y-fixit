@@ -180,6 +180,11 @@ h2 {
         }
       }
     }
+    .tab-content {
+      border: 1px solid #010101;
+      border-radius: 4px;
+      padding: 1em;
+    }
     .tab-content.is-hidden {
       display: none;
     }
