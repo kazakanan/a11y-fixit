@@ -1,130 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A11y Fix-It</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="scripts/main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A11y Fix-It</title>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="scripts/main.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rozha+One&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
-</head>
-
-<body>
-  <div class="grid-container">
-    <header>
-      <img class="left" src="./images/a11y-summer-camp-logo.svg" alt="A11y summer camp header image">
-      <img class="right" src="./images/header-constellation.svg" alt="A11y summer camp header image">
-    </header>
-    <div class="wrapper">
-
-      <main class="exercises">
-        <h1>A11y Fix-It</h1>
-        <p>Welcome to the A11y Fix-It! This is a place where you can practice fixing accessibility coding issues.</p>
-
-        <button id="toggle-button" class="disclosure-btn" type="button" aria-expanded="false"
-          aria-controls="content-to-toggle"> Instructions</button>
-        <div id="content-to-toggle" class="desc">
-          <p>With each exercise you will be presented with an inaccessible component. Your task is to identify and fix
-            the
-            accessibility issues.</p>
-        </div>
-
-
-
-
-        <h2>Exercise 1</h2>
-        <ul>
-
-          <li>Make the instruction disclosure accessible.</li>
-        </ul>
-
-        <!-- Exercise 2 -->
-        <h2>Exercise 2</h2>
-        <p>Fix this modal:</p>
-        <button id="open-modal-button">What is ARIA?</button>
-
-        <div id="modal">
-
-          <h2>ARIA</h2>
+  <body>
+    <div class="grid-container">
+      <header>
+        <img
+          class="left"
+          src="./images/a11y-summer-camp-logo.svg"
+          alt="A11y summer camp header image"
+        />
+        <img
+          class="right"
+          src="./images/header-constellation.svg"
+          alt="A11y summer camp header image"
+        />
+      </header>
+      <div class="wrapper">
+        <main class="exercises">
+          <h1>A11y Fix-It</h1>
           <p>
-            Accessible Rich Internet Applications (ARIA) provides roles, states, and
-            properties that help assistive technologies understand custom web components
-            when native HTML is not enough. Use semantic HTML whenever possible and ARIA
-            only when needed. Learn more about ARIA and how to use it in the following resources:
+            Welcome to the A11y Fix-It! This is a place where you can practice
+            fixing accessibility coding issues.
           </p>
+
+          <button
+            id="toggle-button"
+            class="disclosure-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="content-to-toggle"
+          >
+            Instructions
+          </button>
+          <div id="content-to-toggle" class="desc">
+            <p>
+              With each exercise you will be presented with an inaccessible
+              component. Your task is to identify and fix the accessibility
+              issues.
+            </p>
+          </div>
+
+          <h2>Exercise 1</h2>
           <ul>
-            <li><a href="https://www.w3.org/WAI/standards-guidelines/aria/">WAI-ARIA specification</a></li>
-            <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/">ARIA Authoring Practices Guide (APG)</a></li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN ARIA documentation</a>
-            </li>
+            <li>Make the instruction disclosure accessible.</li>
           </ul>
 
-          <button id="close-modal-button">Close</button>
-        </div>
+          <!-- Exercise 2 -->
+          <h2>Exercise 2</h2>
+          <p>Fix this modal:</p>
+          <button id="open-modal-button">What is ARIA?</button>
 
-        <h2>Exercise 3</h2>
-        <p>Make this radio group accessible.</p>
-        <div class="radio-group">
-          <div id="a" class="radio-option selected"">
-          <img src=" ./images/noodles.png">
-            Option A
+          <div id="modal">
+            <h2>ARIA</h2>
+            <p>
+              Accessible Rich Internet Applications (ARIA) provides roles,
+              states, and properties that help assistive technologies understand
+              custom web components when native HTML is not enough. Use semantic
+              HTML whenever possible and ARIA only when needed. Learn more about
+              ARIA and how to use it in the following resources:
+            </p>
+            <ul>
+              <li>
+                <a href="https://www.w3.org/WAI/standards-guidelines/aria/"
+                  >WAI-ARIA specification</a
+                >
+              </li>
+              <li>
+                <a href="https://www.w3.org/WAI/ARIA/apg/patterns/"
+                  >ARIA Authoring Practices Guide (APG)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA"
+                  >MDN ARIA documentation</a
+                >
+              </li>
+            </ul>
+
+            <button id="close-modal-button">Close</button>
           </div>
-          <div id="b" class=" radio-option"">
-           <img src=" ./images/fries.png">
-            Option B
+
+          <h2>Exercise 3</h2>
+          <p>Make this radio group accessible.</p>
+          <div class="radio-group">
+            <div id="a" class="radio-option selected">
+              <img src=" ./images/noodles.png" />
+              Option A
+            </div>
+            <div id="b" class="radio-option">
+              <img src=" ./images/fries.png" />
+              Option B
+            </div>
+            <div id="c" class="radio-option">
+              <img src=" ./images/burger.png" />
+              Option C
+            </div>
           </div>
-          <div id="c" class="radio-option"">
-           <img src=" ./images/burger.png">
-            Option C
+          <h2>Exercise 4</h2>
+          <p>Group the exercises above into a tab set.</p>
+        </main>
+        <aside id="sidebar">
+          <div>
+            <h2>Best practices</h2>
+            <p>
+              Your counselor Coder Bear has curated this list of best practices
+              to guide you as you work through the exercises. Take a new trail
+              and explore.
+            </p>
+            <dl>
+              <dt>Semantic HTML first</dt>
+              <dd>
+                Use native HTML when well supported by browsers and assistive
+                technologies; use ARIA only when needed.
+              </dd>
+
+              <dt>No ARIA is better than bad ARIA</dt>
+              <dd>
+                Follow the
+                <a href="https://www.w3.org/WAI/ARIA/apg/patterns/"
+                  >ARIA Authoring Practices Guide (APG)</a
+                >
+                carefully when implementing ARIA patterns.
+              </dd>
+
+              <dt>Avoid "div soup"</dt>
+              <dd>
+                Use semantic HTML elements and ARIA roles to convey meaning and
+                structure, rather than relying on generic
+                <code>&lt;div&gt;</code> elements.
+              </dd>
+            </dl>
+            <figure><img src="./images/coder-bear.svg" /></figure>
           </div>
-        </div>
-        <h2>Exercise 4</h2>
-        <p>Group the exercises above into a tab set.</p>
-      </main>
-      <aside id="sidebar">
-        <div>
-          <h2>Best practices</h2>
-          <p>Your counselor Coder Bear has curated this list of best practices to guide you as you work through the
-            exercises. Take a new trail and
-            explore.</p>
-          <dl>
-            <dt>Semantic HTML first</dt>
-            <dd>
-              Use native HTML when well supported by browsers and assistive technologies; use ARIA only when needed.
-            </dd>
-
-            <dt>No ARIA is better than bad ARIA</dt>
-            <dd>
-              Follow the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">ARIA Authoring Practices Guide (APG)</a>
-              carefully
-              when implementing ARIA patterns.
-            </dd>
-
-            <dt>Avoid "div soup"</dt>
-            <dd>
-              Use semantic HTML elements and ARIA roles to convey meaning and structure, rather than relying on generic
-              <code>&lt;div&gt;</code> elements.
-            </dd>
-          </dl>
-          <figure><img src="./images/coder-bear.svg"></figure>
-
-      </aside>
-
+        </aside>
+      </div>
+      <footer>
+        <p>Copyright &copy; 2026</p>
+      </footer>
     </div>
-    <footer>
-      <p>Copyright &copy; 2026</p>
-    </footer>
-
-  </div>
-
-</body>
-
+  </body>
 </html>
