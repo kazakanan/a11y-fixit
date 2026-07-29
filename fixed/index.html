@@ -31,13 +31,9 @@
         <img
           class="left"
           src="../images/a11y-summer-camp-logo.svg"
-          alt="A11y summer camp header image"
+          alt="A11y coding summer camp"
         />
-        <img
-          class="right"
-          src="../images/header-constellation.svg"
-          alt="A11y summer camp header image"
-        />
+        <img class="right" src="../images/header-constellation.svg" alt="" />
       </header>
       <div class="wrapper">
         <main class="exercises">
@@ -70,6 +66,7 @@
               aria-selected="true"
               aria-controls="exercise-1"
               id="exercise-1-tab"
+              tabindex="0"
               class="tab-btn"
             >
               Exercise 1
@@ -79,6 +76,7 @@
               aria-selected="false"
               aria-controls="exercise-2"
               id="exercise-2-tab"
+              tabindex="-1"
               class="tab-btn"
             >
               Exercise 2
@@ -88,6 +86,7 @@
               aria-selected="false"
               aria-controls="exercise-3"
               id="exercise-3-tab"
+              tabindex="-1"
               class="tab-btn"
             >
               Exercise 3
@@ -97,6 +96,7 @@
               aria-selected="false"
               aria-controls="exercise-4"
               id="exercise-4-tab"
+              tabindex="-1"
               class="tab-btn"
             >
               Exercise 4
@@ -119,6 +119,7 @@
             id="exercise-2"
             role="tabpanel"
             aria-labelledby="exercise-2-tab"
+            hidden
             class="tab-content is-hidden"
           >
             <h2>Exercise 2</h2>
@@ -169,6 +170,7 @@
             id="exercise-3"
             role="tabpanel"
             aria-labelledby="exercise-3-tab"
+            hidden
             class="tab-content is-hidden"
           >
             <h2>Exercise 3</h2>
@@ -215,6 +217,7 @@
             id="exercise-4"
             role="tabpanel"
             aria-labelledby="exercise-4-tab"
+            hidden
             class="tab-content is-hidden"
           >
             <h2>Exercise 4</h2>

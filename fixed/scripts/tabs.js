@@ -1,27 +1,66 @@
 export function setupTabs() {
   const tabList = document.getElementById("tablist");
+  if (!tabList) return;
+
   const tabs = Array.from(tabList.getElementsByClassName("tab-btn"));
-  const tabPanels = Array.from(document.getElementsByClassName("tab-content"));
+  if (!tabs.length) return;
+
+  const tabPanels = tabs.map((tab) => {
+    const panelId = tab.getAttribute("aria-controls");
+    return panelId ? document.getElementById(panelId) : null;
+  });
+
+  const getSafeIndex = (index) => {
+    if (index < 0) return tabs.length - 1;
+    if (index >= tabs.length) return 0;
+    return index;
+  };
+
+  const activateTab = (nextIndex, shouldFocus = true) => {
+    tabs.forEach((tab, index) => {
+      const isSelected = index === nextIndex;
+      const panel = tabPanels[index];
+
+      tab.setAttribute("aria-selected", String(isSelected));
+      tab.setAttribute("tabindex", isSelected ? "0" : "-1");
+      tab.classList.toggle("selected", isSelected);
+
+      if (panel) {
+        panel.hidden = !isSelected;
+        panel.classList.toggle("is-hidden", !isSelected);
+      }
+    });
+
+    if (shouldFocus) {
+      tabs[nextIndex].focus();
+    }
+  };
+
+  const initialIndex = Math.max(
+    0,
+    tabs.findIndex((tab) => tab.getAttribute("aria-selected") === "true"),
+  );
+
+  activateTab(initialIndex, false);
 
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
-      tabs.forEach((t, i) => {
-        const isSelected = t === tab;
-        t.setAttribute("aria-selected", isSelected);
-        t.classList.toggle("selected", isSelected);
-        tabPanels[i].classList.toggle("is-hidden", !isSelected);
-      });
+      activateTab(index, false);
     });
 
     tab.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+      if (e.key === "ArrowRight") {
         e.preventDefault();
-        const nextIndex = (index + 1) % tabs.length;
-        tabs[nextIndex].focus();
-      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        activateTab(getSafeIndex(index + 1));
+      } else if (e.key === "ArrowLeft") {
         e.preventDefault();
-        const prevIndex = (index - 1 + tabs.length) % tabs.length;
-        tabs[prevIndex].focus();
+        activateTab(getSafeIndex(index - 1));
+      } else if (e.key === "Home") {
+        e.preventDefault();
+        activateTab(0);
+      } else if (e.key === "End") {
+        e.preventDefault();
+        activateTab(tabs.length - 1);
       }
     });
   });

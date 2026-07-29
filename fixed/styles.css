@@ -220,6 +220,7 @@ footer {
   margin-top: 40px;
   p {
     color: white;
+    background-color: #000000;
   }
   @media (min-width: 1920px) {
     background-size: auto;
