@@ -96,16 +96,27 @@ h2 {
       background: transparent;
       border: 1px solid #010101;
       border-radius: 4px;
+      padding: 4px 8px;
       text-align: left;
       font-size: 17px;
       font-weight: 700;
       line-height: 30px;
     }
-    button[aria-expanded="false"]::before {
+    .disclosure-btn:hover,
+    .disclosure-btn:focus,
+    .disclosure-btn:focus-visible {
+      background-color: #def;
+      border: 2px solid #005a9c;
+      padding: 3px 7px;
+    }
+    .disclosure-btn:hover {
+      cursor: pointer;
+    }
+    .disclosure-btn[aria-expanded="false"]::before {
       content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' style='forced-color-adjust: auto;'%3E%3Cpolygon points='1 1, 1 11, 8 6' fill='currentcolor' stroke= 'currentcolor' /%3E%3C/svg%3E%0A");
       position: relative;
     }
-    button[aria-expanded="true"]::before {
+    .disclosure-btn[aria-expanded="true"]::before {
       content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' style='forced-color-adjust: auto;'%3E%3Cpolygon points='1 1, 11 1, 6 8' fill='currentcolor' stroke= 'currentcolor' /%3E%3C/svg%3E ");
       position: relative;
       left: -4px;
