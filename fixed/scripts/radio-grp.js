@@ -35,7 +35,8 @@ export function radioGroup() {
         } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
           e.preventDefault();
           const currentIndex = options.indexOf(option);
-          const prevIndex = (currentIndex - 1 + options.length) % options.length;
+          const prevIndex =
+            (currentIndex - 1 + options.length) % options.length;
           const prevOption = options[prevIndex];
 
           options.forEach((o) => {

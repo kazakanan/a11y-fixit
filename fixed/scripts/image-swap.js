@@ -31,7 +31,9 @@ export function imageSwap() {
     imageStates.forEach(({ option, defaultSrc, activeSrc }) => {
       if (!option) return;
 
-      const isSelected = option.classList.contains("selected") || option.getAttribute("aria-checked") === "true";
+      const isSelected =
+        option.classList.contains("selected") ||
+        option.getAttribute("aria-checked") === "true";
       const isHovered = activeHoverId === option.id;
       const isActive = isSelected || isHovered;
 
@@ -69,7 +71,16 @@ export function imageSwap() {
     });
 
     option.addEventListener("keydown", (event) => {
-      if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp", "Enter", " "].includes(event.key)) {
+      if (
+        [
+          "ArrowRight",
+          "ArrowDown",
+          "ArrowLeft",
+          "ArrowUp",
+          "Enter",
+          " ",
+        ].includes(event.key)
+      ) {
         queueMicrotask(syncImages);
       }
     });

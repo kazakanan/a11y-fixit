@@ -25,6 +25,7 @@
 TL;DR: Update `/Users/terishelton/Local/static-sites/app/public/a11y-fixit/fixed/index.html` to meet WCAG 2.2 AA by fixing image alt text, ARIA dialog and radio group semantics, disclosure hidden state, invalid HTML, and placeholder link semantics. Include exact replacement markup for the modal and radio group plus JavaScript behavior patterns.
 
 **Steps**
+
 1. Fix image alt text.
    - Set header images that are purely decorative to `alt=""`.
    - Add an explicit `alt` to the `figure` image in the sidebar.
@@ -76,6 +77,7 @@ TL;DR: Update `/Users/terishelton/Local/static-sites/app/public/a11y-fixit/fixed
    - Check all images have appropriate `alt` text and links have valid semantics.
 
 **Exact replacement markup**
+
 - Modal:
   - `<div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>`
   - `<h2 id="modal-title">Hints</h2>`
@@ -94,6 +96,7 @@ TL;DR: Update `/Users/terishelton/Local/static-sites/app/public/a11y-fixit/fixed
   - `</div>`
 
 **JavaScript behavior outline**
+
 - Modal behavior:
   - Open button toggles `hidden` on the modal and updates `aria-expanded`.
   - Modal close button hides the modal and returns focus.
@@ -106,16 +109,19 @@ TL;DR: Update `/Users/terishelton/Local/static-sites/app/public/a11y-fixit/fixed
   - Visual selected styling stays synced with `aria-checked`.
 
 **Estimated time**
+
 - HTML markup updates: 15–25 minutes.
 - JavaScript implementation: 10–20 minutes.
 - Verification and testing: 5–10 minutes.
 - Total estimate: 30–55 minutes.
 
 **Relevant files**
+
 - `/Users/terishelton/Local/static-sites/app/public/a11y-fixit/fixed/index.html`
 - `styles.css` and `scripts/main.js`
 
 **Verification**
+
 1. Validate the updated HTML output.
 2. Confirm the modal is hidden until opened and announces as a dialog.
 3. Confirm the disclosure toggles hidden state and `aria-expanded` correctly.
@@ -123,5 +129,6 @@ TL;DR: Update `/Users/terishelton/Local/static-sites/app/public/a11y-fixit/fixed
 5. Confirm no missing `alt` text and valid link semantics.
 
 **Assumptions**
+
 - ARIA patterns are preferred over native HTML controls for the modal and radio group.
 - The task is limited to the HTML file and supporting JS behavior, not extensive CSS redesign.
