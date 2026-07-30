@@ -1,11 +1,31 @@
+:root {
+  color-scheme: light dark;
+  --page-bg: light-dark(#ffffff, #141518);
+  --page-text: light-dark(#2f3136, #eceef3);
+  --surface-bg: light-dark(#f4f4f4, #1b1d22);
+  --surface-elevated: light-dark(#ffffff, #22252c);
+  --border-strong: light-dark(#1e1f24, #858a98);
+  --focus-color: light-dark(#4b2e83, #b39aff);
+  --interactive-hover: light-dark(#d9efff, #2b3f57);
+  --interactive-active: light-dark(#e93cac, #ff6fc7);
+  /* interactive text color is always black to contrast with pink background */
+  --interactive-text: light-dark(#000000, #000000);
+  --inverse-bg: light-dark(#000000, #f2f4f8);
+  --inverse-text: light-dark(#ffffff, #101217);
+  /* footer text always white because of the background image always black */
+  --footer-text: light-dark(#ffffff, #ffffff);
+}
+
 * {
   box-sizing: border-box;
   &:focus {
-    outline: 2px solid #4b2e83;
+    outline: 2px solid var(--focus-color);
     outline-offset: 2px;
   }
 }
 body {
+  background-color: var(--page-bg);
+  color: var(--page-text);
   font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
@@ -45,7 +65,7 @@ h3,
 p,
 li,
 button {
-  color: #3d3d3d;
+  color: inherit;
 }
 h1 {
   font-size: 37px;
@@ -74,6 +94,7 @@ h2 {
     }
   }
   .wrapper {
+    background-color: var(--page-bg);
     --wrapper-padding: 2em;
     padding-inline: var(--wrapper-padding);
   }
@@ -84,7 +105,8 @@ h2 {
 
     #content-to-toggle {
       display: none;
-      border: 1px solid #010101;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-strong);
       border-top: 0 none;
       padding: 1em;
     }
@@ -93,9 +115,13 @@ h2 {
       display: none;
     }
     .disclosure-btn {
+      align-items: center;
       background: transparent;
-      border: 1px solid #010101;
+      border: 1px solid var(--border-strong);
       border-radius: 4px;
+      color: inherit;
+      display: inline-flex;
+      gap: 0.45rem;
       padding: 4px 8px;
       text-align: left;
       font-size: 17px;
@@ -105,27 +131,30 @@ h2 {
     .disclosure-btn:hover,
     .disclosure-btn:focus,
     .disclosure-btn:focus-visible {
-      background-color: #def;
-      border: 2px solid #005a9c;
+      background-color: var(--interactive-hover);
+      border: 2px solid var(--focus-color);
       padding: 3px 7px;
     }
     .disclosure-btn:hover {
       cursor: pointer;
     }
-    .disclosure-btn[aria-expanded="false"]::before {
-      content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' style='forced-color-adjust: auto;'%3E%3Cpolygon points='1 1, 1 11, 8 6' fill='currentcolor' stroke= 'currentcolor' /%3E%3C/svg%3E%0A");
-      position: relative;
+    .disclosure-btn::before {
+      border-bottom: 0.32em solid transparent;
+      border-left: 0.5em solid currentColor;
+      border-top: 0.32em solid transparent;
+      content: "";
+      display: inline-block;
+      height: 0;
+      transform-origin: 30% 50%;
+      width: 0;
     }
     .disclosure-btn[aria-expanded="true"]::before {
-      content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' style='forced-color-adjust: auto;'%3E%3Cpolygon points='1 1, 11 1, 6 8' fill='currentcolor' stroke= 'currentcolor' /%3E%3C/svg%3E ");
-      position: relative;
-      left: -4px;
-      top: 2px;
+      transform: rotate(90deg);
     }
     #open-modal-button {
-      background: black;
-      border: none;
-      color: white;
+      background: var(--inverse-bg);
+      border: 1px solid var(--border-strong);
+      color: var(--inverse-text);
       font-size: 23px;
       padding: 12px 17px;
       text-transform: uppercase;
@@ -134,8 +163,9 @@ h2 {
 
     #modal {
       display: block;
-      background: white;
-      border: 2px solid #333;
+      background: var(--surface-elevated);
+      border: 2px solid var(--border-strong);
+      color: var(--page-text);
       padding: 20px;
       position: fixed;
       top: 20%;
@@ -149,31 +179,51 @@ h2 {
     }
 
     .radio-group {
+      color: CanvasText;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       .radio-option {
         align-items: center;
-        border: 4px solid #3d3d3d;
+        background: Canvas;
+        border: 2px solid CanvasText;
         border-radius: 18px;
-        color: #000;
+        color: CanvasText;
         cursor: pointer;
         display: flex;
         gap: 10px;
-        padding: 0 25px;
+        padding: 0.5rem 1.25rem;
         position: relative;
       }
-      .radio-option:hover,
-      .radio-option:focus,
-      .radio-option:focus-within,
-      .radio-option[aria-checked="true"] {
-        background: black;
-        border-color: black;
-        color: #fff;
+      .radio-option .food-icon {
+        flex: none;
+        height: 2rem;
+        width: 2rem;
       }
-
+      .radio-option:hover {
+        background: color-mix(in srgb, CanvasText 10%, Canvas);
+      }
+      .radio-option:focus {
+        outline: none;
+      }
+      .radio-option:focus-visible {
+        outline: 3px solid Highlight;
+        outline-offset: 3px;
+      }
+      .radio-option[aria-checked="true"] {
+        background: color-mix(in srgb, CanvasText 18%, Canvas);
+        border-color: CanvasText;
+        font-weight: 700;
+      }
+      .radio-option[aria-checked="true"]:hover {
+        background: color-mix(in srgb, CanvasText 24%, Canvas);
+      }
+      .radio-option[aria-checked="true"]:focus-visible {
+        background: color-mix(in srgb, CanvasText 24%, Canvas);
+      }
+      .radio-option:hover,
       .radio-option[aria-checked="false"] {
-        background: transparent;
+        background: Canvas;
       }
 
       @media (forced-colors: active) {
@@ -203,8 +253,9 @@ h2 {
 
       .tab-btn {
         background: transparent;
-        border: 1px solid #010101;
+        border: 1px solid var(--border-strong);
         border-radius: 4px;
+        color: inherit;
         font-size: 17px;
         font-weight: 700;
         line-height: 30px;
@@ -214,13 +265,14 @@ h2 {
         &[aria-selected="true"],
         &:hover,
         &:focus {
-          background-color: #e93cac;
-          color: black;
+          background-color: var(--interactive-active);
+          color: var(--interactive-text);
         }
       }
     }
     .tab-content {
-      border: 1px solid #010101;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-strong);
       border-radius: 4px;
       padding: 1em;
     }
@@ -235,8 +287,9 @@ h2 {
   #sidebar {
     grid-area: sidebar;
     align-items: flex-end;
-    background-color: #f4f4f4;
-    border: 1px solid black;
+    background-color: var(--surface-bg);
+    border: 1px solid var(--border-strong);
+    color: var(--page-text);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -263,8 +316,7 @@ footer {
   flex-wrap: wrap;
   margin-top: 40px;
   p {
-    color: white;
-    background-color: #000000;
+    color: var(--footer-text);
   }
   @media (min-width: 1920px) {
     background-size: auto;

@@ -6,12 +6,6 @@
     <title>A11y Fix-It Fixed!</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="preload" as="image" href="../images/noodles-black.png" />
-    <link rel="preload" as="image" href="../images/noodles-white.png" />
-    <link rel="preload" as="image" href="../images/fries.png" />
-    <link rel="preload" as="image" href="../images/fries-white.png" />
-    <link rel="preload" as="image" href="../images/burger.png" />
-    <link rel="preload" as="image" href="../images/burger-white.png" />
     <script type="module" src="./scripts/main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -189,7 +183,33 @@
                 aria-checked="true"
                 tabindex="0"
               >
-                <img src="../images/noodles-black.png" alt="Noodle bowl" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  class="food-icon"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M4 13h16c-.9 4.4-4.1 7-8 7s-7.1-2.6-8-7Z"
+                  />
+                  <path
+                    d="M6.5 10.5c1 1 2 1 3 0s2-1 3 0 2 1 3 0 2-1 3 0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14.5 5.5 19 10M17.5 4 22 8.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
                 Option A
               </div>
               <div
@@ -199,7 +219,46 @@
                 aria-checked="false"
                 tabindex="-1"
               >
-                <img src="../images/fries.png" alt="Fries" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  class="food-icon"
+                >
+                  <rect
+                    x="6"
+                    y="4"
+                    width="2.4"
+                    height="7"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                  <rect
+                    x="9.1"
+                    y="3"
+                    width="2.4"
+                    height="8"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                  <rect
+                    x="12.2"
+                    y="4.2"
+                    width="2.4"
+                    height="6.8"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                  <rect
+                    x="15.3"
+                    y="3.4"
+                    width="2.4"
+                    height="7.6"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                  <path fill="currentColor" d="M5.5 10h13l-1.9 9H7.4l-1.9-9Z" />
+                </svg>
                 Option B
               </div>
               <div
@@ -209,7 +268,45 @@
                 aria-checked="false"
                 tabindex="-1"
               >
-                <img src="../images/burger.png" alt="Burger and drink" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  class="food-icon"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M3 10.8c.7-2.2 2.5-3.5 4.8-3.5s4.1 1.3 4.8 3.5H3Z"
+                  />
+                  <rect
+                    x="3"
+                    y="11.8"
+                    width="9.6"
+                    height="1.9"
+                    rx=".9"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M3.5 15h8.6c-.4 1.5-1.6 2.3-3.1 2.3H6.6c-1.5 0-2.7-.8-3.1-2.3Z"
+                  />
+                  <path
+                    d="M15 8h5l-1 9h-3L15 8Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M16.9 5.5v2.5M16.9 5.5l2.4 2.4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
                 Option C
               </div>
             </div>
