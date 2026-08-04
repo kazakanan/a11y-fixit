@@ -309,6 +309,11 @@ h2 {
       .cls-2 {
         fill: #fff;
       }
+      text{
+        fill: #000;
+        font-size: 1.75em;
+        font-family: "Open Sans", sans-serif;
+      }
       a:focus path.belly, a:hover path.belly {
         stroke-width: 10px;
         stroke: #e93cac;
