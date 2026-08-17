@@ -6,7 +6,7 @@
     <title>A11y Fixed</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="scripts/main.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,72 +31,31 @@
       </header>
       <div class="wrapper">
         <main class="exercises">
-          <h1>A11y Fixed</h1>
+          <h1>A11y No JavaScript Solution</h1>
           <p>
             Welcome to the A11y Fix-It! This is a place where you can review
-            these fixed accessibility coding issues.
+            these fixed accessibility coding issues that do not use Javascript.
           </p>
-
-          <button
-            id="toggle-button"
-            class="disclosure-btn"
-            type="button"
-            aria-expanded="false"
-            aria-controls="content-to-toggle"
-          >
-            Instructions
-          </button>
-          <div id="content-to-toggle" class="desc" aria-hidden="true">
-            <p>
-              With each exercise you will be presented with an inaccessible
-              component. Your task is to identify and fix the accessibility
-              issues.
-            </p>
-          </div>
+          <details>
+            <summary
+              id="instructions-summary"
+              aria-controls="content-to-toggle"
+            >
+              Instructions
+            </summary>
+            <div id="content-to-toggle" class="desc" aria-hidden="true">
+              <p>
+                With each exercise you will be presented with an inaccessible
+                component. Your task is to identify and fix the accessibility
+                issues.
+              </p>
+            </div>
+          </details>
 
           <div role="tablist" aria-label="Exercises" id="tablist">
-            <button
-              role="tab"
-              aria-selected="true"
-              aria-controls="exercise-1"
-              id="exercise-1-tab"
-              tabindex="0"
-              class="tab-btn"
-            >
-              Exercise 1
-            </button>
-            <button
-              role="tab"
-              aria-selected="false"
-              aria-controls="exercise-2"
-              id="exercise-2-tab"
-              tabindex="-1"
-              class="tab-btn"
-            >
-              Exercise 2
-            </button>
-            <button
-              role="tab"
-              aria-selected="false"
-              aria-controls="exercise-3"
-              id="exercise-3-tab"
-              tabindex="-1"
-              class="tab-btn"
-            >
-              Exercise 3
-            </button>
-            <button
-              role="tab"
-              aria-selected="false"
-              aria-controls="exercise-4"
-              id="exercise-4-tab"
-              tabindex="-1"
-              class="tab-btn"
-            >
-              Exercise 4
-            </button>
-          </div>
-          <!-- Exercise 1 -->
+            <details open>
+              <summary>Exercise 1</summary>
+              <!-- Exercise 1 -->
           <div
             role="tabpanel"
             id="exercise-1"
@@ -106,7 +65,11 @@
             <h2>Exercise 1: Disclosure</h2>
             <p>Make the instruction disclosure accessible.</p>
           </div>
-          <!-- Exercise 2 -->
+            </details>
+            <details>
+              <summary>Exercise 2</summary>
+             
+              <!-- Exercise 2 -->
           <div
             role="tabpanel"
             id="exercise-2"
@@ -157,7 +120,11 @@
               <button id="close-modal-button">Close</button>
             </div>
           </div>
-          <!-- Exercise 3 -->
+           </details>
+           
+            <details>
+              <summary>Exercise 3</summary>
+              <!-- Exercise 3 -->
           <div
             role="tabpanel"
             id="exercise-3"
@@ -307,8 +274,10 @@
               </div>
             </div>
           </div>
-          <!-- Exercise 4 -->
-
+              </details>
+               <!-- Exercise 4 -->
+            <details>
+              <summary>Exercise 4</summary>
           <div
             role="tabpanel"
             id="exercise-4"
@@ -319,6 +288,9 @@
             <h2>Exercise 4: Tab Set</h2>
             <p>These exercises are now grouped into a tab set.</p>
           </div>
+            </details>
+          
+  
         </main>
         <aside id="sidebar">
           <div>
