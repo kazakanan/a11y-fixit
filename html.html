@@ -58,7 +58,7 @@
             aria-label="Exercises"
             id="tablist"
           >
-            <details name="exercise-tabs" open>
+            <details name="exercise-tabs">
               <summary>Exercise 1</summary>
               <!-- Exercise 1 -->
               <div
@@ -128,6 +128,7 @@
             <!-- Exercise 3 -->
             <details
               name="exercise-tabs"
+              open
               role="tabpanel"
               id="exercise-3"
               aria-labelledby="exercise-3-tab"
@@ -137,149 +138,85 @@
               <div class="tab-content">
                 <h2>Exercise 3: Radio Button Group</h2>
                 <p>Accessible radio group</p>
-                <div
-                  class="radio-group"
-                  aria-labelledby="radio-group-label"
-                  role="radiogroup"
-                >
-                  <div
-                    id="a"
-                    role="radio"
-                    class="radio-option"
-                    aria-checked="true"
-                    tabindex="0"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                      class="food-icon"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M4 13h16c-.9 4.4-4.1 7-8 7s-7.1-2.6-8-7Z"
-                      />
-                      <path
-                        d="M6.5 10.5c1 1 2 1 3 0s2-1 3 0 2 1 3 0 2-1 3 0"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M14.5 5.5 19 10M17.5 4 22 8.5"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    Option A
-                  </div>
-                  <div
-                    id="b"
-                    role="radio"
-                    class="radio-option"
-                    aria-checked="false"
-                    tabindex="-1"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                      class="food-icon"
-                    >
-                      <rect
-                        x="6"
-                        y="4"
-                        width="2.4"
-                        height="7"
-                        rx="1"
-                        fill="currentColor"
-                      />
-                      <rect
-                        x="9.1"
-                        y="3"
-                        width="2.4"
-                        height="8"
-                        rx="1"
-                        fill="currentColor"
-                      />
-                      <rect
-                        x="12.2"
-                        y="4.2"
-                        width="2.4"
-                        height="6.8"
-                        rx="1"
-                        fill="currentColor"
-                      />
-                      <rect
-                        x="15.3"
-                        y="3.4"
-                        width="2.4"
-                        height="7.6"
-                        rx="1"
-                        fill="currentColor"
-                      />
-                      <path
-                        fill="currentColor"
-                        d="M5.5 10h13l-1.9 9H7.4l-1.9-9Z"
-                      />
-                    </svg>
-                    Option B
-                  </div>
-                  <div
-                    id="c"
-                    role="radio"
-                    class="radio-option"
-                    aria-checked="false"
-                    tabindex="-1"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                      class="food-icon"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M3 10.8c.7-2.2 2.5-3.5 4.8-3.5s4.1 1.3 4.8 3.5H3Z"
-                      />
-                      <rect
-                        x="3"
-                        y="11.8"
-                        width="9.6"
-                        height="1.9"
-                        rx=".9"
-                        fill="currentColor"
-                      />
-                      <path
-                        fill="currentColor"
-                        d="M3.5 15h8.6c-.4 1.5-1.6 2.3-3.1 2.3H6.6c-1.5 0-2.7-.8-3.1-2.3Z"
-                      />
-                      <path
-                        d="M15 8h5l-1 9h-3L15 8Z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M16.9 5.5v2.5M16.9 5.5l2.4 2.4"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    Option C
-                  </div>
+                
+                  <span id="food-label">Choose your favorite food:</span>
+                  <div class="radio-group">
+                   
+                      <div class="radio-option">
+                <input type="radio" name="food" id="pho" value="pho" class="radio-option" checked />
+                <label for="pho"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="food-icon">
+                  <path fill="currentColor" d="M4 13h16c-.9 4.4-4.1 7-8 7s-7.1-2.6-8-7Z"></path>
+                  <path d="M6.5 10.5c1 1 2 1 3 0s2-1 3 0 2 1 3 0 2-1 3 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M14.5 5.5 19 10M17.5 4 22 8.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>Pho</label>
                 </div>
-              </div>
+                <div class="radio-option">
+                <input type="radio" name="food" id="fries" value="fries" class="radio-option" />
+                <label for="fries"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    class="food-icon"
+                  >
+                    <rect
+                      x="6"
+                      y="4"
+                      width="2.4"
+                      height="7"
+                      rx="1"
+                      fill="currentColor"
+                    ></rect>
+                    <rect
+                      x="9.1"
+                      y="3"
+                      width="2.4"
+                      height="8"
+                      rx="1"
+                      fill="currentColor"
+                    ></rect>
+                    <rect
+                      x="12.2"
+                      y="4.2"
+                      width="2.4"
+                      height="6.8"
+                      rx="1"
+                      fill="currentColor"
+                    ></rect>
+                    <rect
+                      x="15.3"
+                      y="3.4"
+                      width="2.4"
+                      height="7.6"
+                      rx="1"
+                      fill="currentColor"
+                    ></rect>
+                    <path
+                      fill="currentColor"
+                      d="M5.5 10h13l-1.9 9H7.4l-1.9-9Z"
+                    ></path>
+                    </svg>
+                   Fries</label
+                >
+                    </div>
+                <div class="radio-option">
+                <input
+                  type="radio"
+                  name="food"
+                  id="burger-shake"
+                  value="burger-shake"
+                  class="radio-option"
+                />
+                <label for="burger-shake"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="food-icon">
+                  <path fill="currentColor" d="M3 10.8c.7-2.2 2.5-3.5 4.8-3.5s4.1 1.3 4.8 3.5H3Z"></path>
+                  <rect x="3" y="11.8" width="9.6" height="1.9" rx=".9" fill="currentColor"></rect>
+                  <path fill="currentColor" d="M3.5 15h8.6c-.4 1.5-1.6 2.3-3.1 2.3H6.6c-1.5 0-2.7-.8-3.1-2.3Z"></path>
+                  <path d="M15 8h5l-1 9h-3L15 8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M16.9 5.5v2.5M16.9 5.5l2.4 2.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg> Burger and Shake</label>
+                </div>
+                    
+                  </div>
             </details>
             <!-- Exercise 4 -->
             <details

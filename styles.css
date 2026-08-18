@@ -67,7 +67,7 @@ h2 {
   grid-row: 1;
   padding: 12px 24px;
   background: #ff6fc7;
-  cursor: pointer;
+  cursor: pointer;ta
   border-bottom: 2px solid #e93cac;
   list-style: none; /* Removes the default disclosure triangle */
   text-align: center;
@@ -103,6 +103,10 @@ h2 {
 
 details:not([open])::details-content {
   display: none;
+}
+
+.tab-content {
+  width: 100%;
 }
 
 .grid-container {
