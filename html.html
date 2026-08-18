@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A11y Fixed</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script type="module" src="scripts/main.js"></script>
     <link rel="stylesheet" href="styles.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,254 +44,257 @@
             >
               Instructions
             </summary>
-            <div id="content-to-toggle" class="desc" aria-hidden="true">
-              <p>
-                With each exercise you will be presented with an inaccessible
-                component. Your task is to identify and fix the accessibility
-                issues.
-              </p>
-            </div>
+
+            <p>
+              With each exercise you will be presented with an inaccessible
+              component. Your task is to identify and fix the accessibility
+              issues.
+            </p>
           </details>
 
-          <div role="tablist" aria-label="Exercises" id="tablist">
-            <details open>
+          <div
+            class="tabs-container"
+            role="tablist"
+            aria-label="Exercises"
+            id="tablist"
+          >
+            <details name="exercise-tabs" open>
               <summary>Exercise 1</summary>
               <!-- Exercise 1 -->
-          <div
-            role="tabpanel"
-            id="exercise-1"
-            aria-labelledby="exercise-1-tab"
-            class="tab-content"
-          >
-            <h2>Exercise 1: Disclosure</h2>
-            <p>Make the instruction disclosure accessible.</p>
-          </div>
+              <div
+                role="tabpanel"
+                id="exercise-1"
+                aria-labelledby="exercise-1-tab"
+                class="tab-content"
+              >
+                <h2>Exercise 1: Disclosure</h2>
+                <p>Make the instruction disclosure accessible.</p>
+              </div>
             </details>
-            <details>
+            <!-- Exercise 2 -->
+            <details
+              name="exercise-tabs"
+              role="tabpanel"
+              id="exercise-2"
+              aria-labelledby="exercise-2-tab"
+            >
               <summary>Exercise 2</summary>
-             
-              <!-- Exercise 2 -->
-          <div
-            role="tabpanel"
-            id="exercise-2"
-            aria-labelledby="exercise-2-tab"
-            class="tab-content is-hidden"
-            hidden
-          >
-            <h2>Exercise 2: Modal</h2>
-            <p>Fixed modal:</p>
-            <button id="open-modal-button">What is ARIA?</button>
+              <div class="tab-content">
+                <h2>Exercise 2: Modal</h2>
+                <p>Fixed modal:</p>
+                <button id="open-modal-button">What is ARIA?</button>
 
-            <div
-              role="dialog"
-              id="modal"
-              aria-modal="true"
-              aria-labelledby="modal-heading"
-              aria-hidden="true"
-              hidden
-            >
-              <h2 id="modal-heading">ARIA</h2>
-              <p id="modal-description">
-                Accessible Rich Internet Applications (ARIA) provides roles,
-                states, and properties that help assistive technologies
-                understand custom web components when native HTML is not enough.
-                Use semantic HTML whenever possible and ARIA only when needed.
-                Learn more about ARIA and how to use it in the following
-                resources:
-              </p>
-              <ul>
-                <li>
-                  <a href="https://www.w3.org/WAI/standards-guidelines/aria/"
-                    >WAI-ARIA specification</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.w3.org/WAI/ARIA/apg/patterns/"
-                    >ARIA Authoring Practices Guide (APG)</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA"
-                    >MDN ARIA documentation</a
-                  >
-                </li>
-              </ul>
+                <div
+                  role="dialog"
+                  id="modal"
+                  aria-modal="true"
+                  aria-labelledby="modal-heading"
+                  aria-hidden="true"
+                  hidden
+                >
+                  <h2 id="modal-heading">ARIA</h2>
+                  <p id="modal-description">
+                    Accessible Rich Internet Applications (ARIA) provides roles,
+                    states, and properties that help assistive technologies
+                    understand custom web components when native HTML is not
+                    enough. Use semantic HTML whenever possible and ARIA only
+                    when needed. Learn more about ARIA and how to use it in the
+                    following resources:
+                  </p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://www.w3.org/WAI/standards-guidelines/aria/"
+                        >WAI-ARIA specification</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.w3.org/WAI/ARIA/apg/patterns/"
+                        >ARIA Authoring Practices Guide (APG)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA"
+                        >MDN ARIA documentation</a
+                      >
+                    </li>
+                  </ul>
 
-              <button id="close-modal-button">Close</button>
-            </div>
-          </div>
-           </details>
-           
-            <details>
-              <summary>Exercise 3</summary>
-              <!-- Exercise 3 -->
-          <div
-            role="tabpanel"
-            id="exercise-3"
-            aria-labelledby="exercise-3-tab"
-            class="tab-content is-hidden"
-            hidden
-          >
-            <h2>Exercise 3: Radio Button Group</h2>
-            <p>Accessible radio group</p>
-            <div
-              class="radio-group"
-              aria-labelledby="radio-group-label"
-              role="radiogroup"
-            >
-              <div
-                id="a"
-                role="radio"
-                class="radio-option"
-                aria-checked="true"
-                tabindex="0"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  class="food-icon"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M4 13h16c-.9 4.4-4.1 7-8 7s-7.1-2.6-8-7Z"
-                  />
-                  <path
-                    d="M6.5 10.5c1 1 2 1 3 0s2-1 3 0 2 1 3 0 2-1 3 0"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M14.5 5.5 19 10M17.5 4 22 8.5"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                Option A
+                  <button id="close-modal-button">Close</button>
+                </div>
               </div>
-              <div
-                id="b"
-                role="radio"
-                class="radio-option"
-                aria-checked="false"
-                tabindex="-1"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  class="food-icon"
-                >
-                  <rect
-                    x="6"
-                    y="4"
-                    width="2.4"
-                    height="7"
-                    rx="1"
-                    fill="currentColor"
-                  />
-                  <rect
-                    x="9.1"
-                    y="3"
-                    width="2.4"
-                    height="8"
-                    rx="1"
-                    fill="currentColor"
-                  />
-                  <rect
-                    x="12.2"
-                    y="4.2"
-                    width="2.4"
-                    height="6.8"
-                    rx="1"
-                    fill="currentColor"
-                  />
-                  <rect
-                    x="15.3"
-                    y="3.4"
-                    width="2.4"
-                    height="7.6"
-                    rx="1"
-                    fill="currentColor"
-                  />
-                  <path fill="currentColor" d="M5.5 10h13l-1.9 9H7.4l-1.9-9Z" />
-                </svg>
-                Option B
-              </div>
-              <div
-                id="c"
-                role="radio"
-                class="radio-option"
-                aria-checked="false"
-                tabindex="-1"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  class="food-icon"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M3 10.8c.7-2.2 2.5-3.5 4.8-3.5s4.1 1.3 4.8 3.5H3Z"
-                  />
-                  <rect
-                    x="3"
-                    y="11.8"
-                    width="9.6"
-                    height="1.9"
-                    rx=".9"
-                    fill="currentColor"
-                  />
-                  <path
-                    fill="currentColor"
-                    d="M3.5 15h8.6c-.4 1.5-1.6 2.3-3.1 2.3H6.6c-1.5 0-2.7-.8-3.1-2.3Z"
-                  />
-                  <path
-                    d="M15 8h5l-1 9h-3L15 8Z"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M16.9 5.5v2.5M16.9 5.5l2.4 2.4"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                Option C
-              </div>
-            </div>
-          </div>
-              </details>
-               <!-- Exercise 4 -->
-            <details>
-              <summary>Exercise 4</summary>
-          <div
-            role="tabpanel"
-            id="exercise-4"
-            aria-labelledby="exercise-4-tab"
-            class="tab-content is-hidden"
-            hidden
-          >
-            <h2>Exercise 4: Tab Set</h2>
-            <p>These exercises are now grouped into a tab set.</p>
-          </div>
             </details>
-          
-  
+            <!-- Exercise 3 -->
+            <details
+              name="exercise-tabs"
+              role="tabpanel"
+              id="exercise-3"
+              aria-labelledby="exercise-3-tab"
+            >
+              <summary>Exercise 3</summary>
+
+              <div class="tab-content">
+                <h2>Exercise 3: Radio Button Group</h2>
+                <p>Accessible radio group</p>
+                <div
+                  class="radio-group"
+                  aria-labelledby="radio-group-label"
+                  role="radiogroup"
+                >
+                  <div
+                    id="a"
+                    role="radio"
+                    class="radio-option"
+                    aria-checked="true"
+                    tabindex="0"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      class="food-icon"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M4 13h16c-.9 4.4-4.1 7-8 7s-7.1-2.6-8-7Z"
+                      />
+                      <path
+                        d="M6.5 10.5c1 1 2 1 3 0s2-1 3 0 2 1 3 0 2-1 3 0"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14.5 5.5 19 10M17.5 4 22 8.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Option A
+                  </div>
+                  <div
+                    id="b"
+                    role="radio"
+                    class="radio-option"
+                    aria-checked="false"
+                    tabindex="-1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      class="food-icon"
+                    >
+                      <rect
+                        x="6"
+                        y="4"
+                        width="2.4"
+                        height="7"
+                        rx="1"
+                        fill="currentColor"
+                      />
+                      <rect
+                        x="9.1"
+                        y="3"
+                        width="2.4"
+                        height="8"
+                        rx="1"
+                        fill="currentColor"
+                      />
+                      <rect
+                        x="12.2"
+                        y="4.2"
+                        width="2.4"
+                        height="6.8"
+                        rx="1"
+                        fill="currentColor"
+                      />
+                      <rect
+                        x="15.3"
+                        y="3.4"
+                        width="2.4"
+                        height="7.6"
+                        rx="1"
+                        fill="currentColor"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M5.5 10h13l-1.9 9H7.4l-1.9-9Z"
+                      />
+                    </svg>
+                    Option B
+                  </div>
+                  <div
+                    id="c"
+                    role="radio"
+                    class="radio-option"
+                    aria-checked="false"
+                    tabindex="-1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      class="food-icon"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M3 10.8c.7-2.2 2.5-3.5 4.8-3.5s4.1 1.3 4.8 3.5H3Z"
+                      />
+                      <rect
+                        x="3"
+                        y="11.8"
+                        width="9.6"
+                        height="1.9"
+                        rx=".9"
+                        fill="currentColor"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M3.5 15h8.6c-.4 1.5-1.6 2.3-3.1 2.3H6.6c-1.5 0-2.7-.8-3.1-2.3Z"
+                      />
+                      <path
+                        d="M15 8h5l-1 9h-3L15 8Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16.9 5.5v2.5M16.9 5.5l2.4 2.4"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Option C
+                  </div>
+                </div>
+              </div>
+            </details>
+            <!-- Exercise 4 -->
+            <details
+              name="exercise-tabs"
+              role="tabpanel"
+              id="exercise-4"
+              aria-labelledby="exercise-4-tab"
+            >
+              <summary>Exercise 4</summary>
+              <div class="tab-content">
+                <h2>Exercise 4: Tab Set</h2>
+                <p>These exercises are now grouped into a tab set.</p>
+              </div>
+            </details>
+          </div>
         </main>
         <aside id="sidebar">
           <div>

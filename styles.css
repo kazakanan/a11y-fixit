@@ -1,3 +1,21 @@
+:root {
+  color-scheme: light dark;
+  --page-bg: light-dark(#ffffff, #141518);
+  --page-text: light-dark(#2f3136, #eceef3);
+  --surface-bg: light-dark(#f4f4f4, #1b1d22);
+  --surface-elevated: light-dark(#ffffff, #22252c);
+  --border-strong: light-dark(#1e1f24, #858a98);
+  --focus-color: light-dark(#4b2e83, #b39aff);
+  --interactive-hover: light-dark(#d9efff, #2b3f57);
+  --interactive-active: light-dark(#e93cac, #ff6fc7);
+  /* interactive text color is always black to contrast with pink background */
+  --interactive-text: light-dark(#000000, #000000);
+  --inverse-bg: light-dark(#000000, #f2f4f8);
+  --inverse-text: light-dark(#ffffff, #101217);
+  /* footer text always white because of the background image always black */
+  --footer-text: light-dark(#ffffff, #ffffff);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -27,6 +45,66 @@ h2 {
   font-size: 28px;
   margin-bottom: 0;
 }
+
+/* Container turns into a grid to layout the handles separately from content */
+.tabs-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto); /* Adjust based on your tab count */
+  grid-template-rows: auto 1fr;
+  border: 1px solid #4b2e83;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Strip native details browser styling so layout treats children as direct grid items */
+.tabs-container details,
+.tabs-container details::details-content {
+  display: contents;
+}
+
+/* Style the tab handles (summaries) */
+.tabs-container summary {
+  grid-row: 1;
+  padding: 12px 24px;
+  background: #ff6fc7;
+  cursor: pointer;
+  border-bottom: 2px solid #e93cac;
+  list-style: none; /* Removes the default disclosure triangle */
+  text-align: center;
+}
+
+/* Remove default marker safari fallback */
+.tabs-container summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Visual feedback for keyboard focus and hover */
+.tabs-container summary:hover,
+.tabs-container summary:focus-visible {
+  background: #e0e0e0;
+  outline: 2px solid #4b2e83;
+  outline-offset: -2px;
+}
+
+/* Active/Open Tab visual state */
+.tabs-container details[open] summary {
+  background: #ffffff;
+  border-bottom: 2px solid #4b2e83;
+  font-weight: bold;
+}
+
+/* Direct the content panels to span across the entire bottom row */
+.tabs-container .tab-panel {
+  grid-row: 2;
+  grid-column: 1 / -1; /* Spans all columns */
+  padding: 20px;
+  background: #ffffff;
+}
+
+details:not([open])::details-content {
+  display: none;
+}
+
 .grid-container {
   display: flex;
   flex-direction: column;
@@ -150,7 +228,8 @@ h2 {
       .cls-2 {
         fill: #fff;
       }
-      a:focus path.belly, a:hover path.belly {
+      a:focus path.belly,
+      a:hover path.belly {
         stroke-width: 10px;
         stroke: #e93cac;
         fill: #2ad2c9;
