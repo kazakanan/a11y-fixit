@@ -191,7 +191,7 @@ details:not([open])::details-content {
         align-items: center;
         border: 4px solid #3d3d3d;
         border-radius: 18px;
-        color: #2ad2c9;
+        color: #e93cac;
         cursor: pointer;
         display: flex;
         gap: 10px;
